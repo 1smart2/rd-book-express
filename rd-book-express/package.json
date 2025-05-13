@@ -1,0 +1,31 @@
+{
+  "name": "rd-book-express",
+  "version": "1.0.0",
+  "description": "rd-book后端",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon ./bin/www"
+  },
+  "keywords": [
+    "express"
+  ],
+  "author": "guodongyu333",
+  "license": "ISC",
+  "devDependencies": {
+    "cheerio": "^1.0.0"
+  },
+  "dependencies": {
+    "amqplib": "^0.10.5",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "cros": "^1.0.1",
+    "express": "^4.21.1",
+    "kafkajs": "^2.2.4",
+    "log4js": "^6.9.1",
+    "mongoose": "^8.8.2",
+    "mssql": "^11.0.1",
+    "nodemon": "^3.1.7",
+    "request": "^2.88.2",
+    "ws": "^8.18.0"
+  }
+}
