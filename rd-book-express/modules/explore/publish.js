@@ -124,7 +124,6 @@ router.post("/publish/draft", async (req, res) => {
     if (!user) {
       return failRes(res, "用户不存在",200, 40400);
     }
-    console.log(123, req.body.imagesInfo);
 
     // 覆盖式保存：查找并更新现有草稿，不存在则创建
     const draftData = {

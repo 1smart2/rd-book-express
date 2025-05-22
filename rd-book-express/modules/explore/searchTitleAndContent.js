@@ -27,12 +27,15 @@ router.post("/searchTitleAndContent", async (req, res) => {
         failRes(res, "搜索失败", 400, 40000, err);
       });
       await FirstScreen.find({
+        isApproved: true,
+        isDraft: false ,
         $or: [
           { title: { $regex: searchData, $options: "i" } },
           { content: { $regex: searchData, $options: "i" } },
           { tip: { $regex: searchData, $options: "i" } },
         ],
       })
+        .sort({ createTime: -1 })
         .skip((page - 1) * pageSizeN) // 跳过前面的文档
         .limit(pageSizeN) // 限制返回的文档数量
         .then((data) => {
@@ -45,8 +48,6 @@ router.post("/searchTitleAndContent", async (req, res) => {
       failRes(res, result.message, 400, 40000);
     }
   } catch (error) {
-
-
     errorRes(res, "服务器错误", 500, 50000);
   }
 });
